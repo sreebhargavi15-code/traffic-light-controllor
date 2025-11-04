@@ -1,4 +1,4 @@
-module traffic_light_controller(input clk,rst,output reg [1:0]ns_out,ew_out,output reg [5:0]count);
+module traffic_light_controller(input clk,rst,output reg [1:0]ns_out,ew_out,output reg [3:0]count);
 parameter all_red=3'b000;
 parameter ns_red=3'b001;
 parameter ns_yellow=3'b010;
@@ -13,11 +13,11 @@ if(rst)begin
 ps<=all_red;
 count<=0;
 end
-else if(count<32)begin
+else if(count<16)begin
 count<=count+1'b1;
 ps<=ns;
 end
-else if(count>31)
+else if(count>15)
 count<=0;
 end
 
@@ -112,7 +112,7 @@ endmodule
 Test bench:
 module trf_tb;
 reg clk,rst;
-wire [5:0]count;
+wire [3:0]count;
 wire [1:0]ns_out,ew_out;
 traffic_light_controller dut(clk,rst,ns_out,ew_out,count);
 initial begin
