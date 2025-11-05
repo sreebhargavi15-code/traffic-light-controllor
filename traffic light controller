@@ -44,7 +44,7 @@ ns_yellow: begin
            ns=ns_yellow;
            end
 ns_green:begin
-           if(count==8)
+           if(count==7)
            ns=ew_red;
            else
            ns=ns_green;
@@ -62,7 +62,7 @@ ew_yellow: begin
            ns=ew_yellow;
            end
 ew_green:begin
-           if(count==8)
+           if(count==7)
            ns=ns_red;
            else
            ns=ew_green;
