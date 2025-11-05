@@ -63,7 +63,7 @@ ew_yellow: begin
            end
 ew_green:begin
            if(count==7)
-           ns=ns_red;
+           ns=all_red;
            else
            ns=ew_green;
            end
